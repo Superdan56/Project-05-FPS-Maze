@@ -33,6 +33,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
+[node name="N2" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
 [node name="N_Collision" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
 shape = SubResource( 3 )
@@ -42,11 +47,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 2 )
 
+[node name="S2" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 2 )
+
 [node name="S_Collision" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1 )
 shape = SubResource( 5 )
 
 [node name="Ground" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Ceiling" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 

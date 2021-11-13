@@ -4,4 +4,4 @@
 
 [node name="Game" type="Spatial"]
 
-[node name="Maze" parent="." instance=ExtResource( 1 )]
+[node name="Game" parent="." instance=ExtResource( 1 )]

@@ -20,6 +20,7 @@ func get_input():
 	if Input.is_action_pressed("right"):
 		input_dir += Camera.global_transform.basis.x
 	input_dir = input_dir.normalized()
+	
 	return input_dir
 
 func _unhandled_input(event):
@@ -34,4 +35,5 @@ func _physics_process(delta):
 	
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
+	
 	velocity = move_and_slide(velocity, Vector3.UP, true)
