@@ -59,6 +59,8 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="Menu"]
 margin_right = 1024.0
 margin_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color( 0, 0, 0, 0.25098 )
 
 [node name="Restart" type="Button" parent="Menu"]
