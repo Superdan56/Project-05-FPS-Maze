@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Tile_Wall.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Tile_Floor.tres" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/materials/texture_rock_albedo.png" type="Texture" id=5]
 [ext_resource path="res://Assets/materials/texture_rock_normal.png" type="Texture" id=6]
 [ext_resource path="res://Assets/materials/texture_rock_depth.png" type="Texture" id=7]
+[ext_resource path="res://Maze/Crystal2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.372549, 0.282353, 0.227451, 1 )
@@ -91,3 +92,6 @@ material/0 = null
 
 [node name="Ground_Collision" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 7 )
+
+[node name="Crystal" parent="StaticBody" instance=ExtResource( 8 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -0.0502633, 0.249118, -0.0789702 )

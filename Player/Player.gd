@@ -38,3 +38,5 @@ func _physics_process(delta):
 	velocity.z = desired_velocity.z
 	
 	velocity = move_and_slide(velocity, Vector3.UP, true)
+	
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Tile_Wall.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Tile_Floor.tres" type="Material" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Assets/materials/texture_rock_albedo.png" type="Texture" id=5]
 [ext_resource path="res://Assets/materials/texture_rock_normal.png" type="Texture" id=6]
 [ext_resource path="res://Assets/materials/texture_rock_depth.png" type="Texture" id=7]
+[ext_resource path="res://Maze/Crystal1.tscn" type="PackedScene" id=8]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.372549, 0.282353, 0.227451, 1 )
 albedo_texture = ExtResource( 5 )
 metallic = 0.86
@@ -29,24 +30,24 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 7 )
 
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
 size = Vector3( 2, 2, 0.1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1, 1, 0.05 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=6]
 size = Vector3( 0.1, 2, 2 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.05, 1, 1 )
 
-[sub_resource type="CubeMesh" id=6]
+[sub_resource type="CubeMesh" id=8]
 material = ExtResource( 2 )
 size = Vector3( 2, 0.1, 2 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=9]
 extents = Vector3( 1, 0.05, 1 )
 
 [node name="Tile" type="Spatial"]
@@ -55,7 +56,7 @@ extents = Vector3( 1, 0.05, 1 )
 
 [node name="N" type="MeshInstance" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2, -1 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="N_Collision" type="CollisionShape" parent="StaticBody"]
@@ -64,16 +65,16 @@ shape = SubResource( 3 )
 
 [node name="E" type="MeshInstance" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 1, 2, 0 )
-mesh = SubResource( 4 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 1 )
 
 [node name="E_Collision" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 1, 2, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="S" type="MeshInstance" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2, 1 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="S_Collision" type="CollisionShape" parent="StaticBody"]
@@ -81,13 +82,16 @@ transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2, 1 )
 shape = SubResource( 3 )
 
 [node name="Ground" type="MeshInstance" parent="StaticBody"]
-mesh = SubResource( 6 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="Ceiling" type="MeshInstance" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 6 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="Ground_Collision" type="CollisionShape" parent="StaticBody"]
-shape = SubResource( 7 )
+shape = SubResource( 9 )
+
+[node name="Crystal" parent="StaticBody" instance=ExtResource( 8 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.173002, 0.195344, -0.0232421 )

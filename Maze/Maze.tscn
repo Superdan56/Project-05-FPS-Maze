@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Maze/Maze.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://UI/Pause_Menu.gd" type="Script" id=3]
+[ext_resource path="res://Maze/Control.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Piperita Cox.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="Environment" id=5]
 
@@ -18,6 +20,12 @@ radius = 0.5
 [sub_resource type="BoxShape" id=4]
 margin = 0.001
 extents = Vector3( 0.4, 0.1, 0.4 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
 
 [node name="Game" type="Spatial"]
 
@@ -84,6 +92,24 @@ margin_top = 300.0
 margin_right = 574.0
 margin_bottom = 340.0
 text = "Quit"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="Control"]
+margin_right = 67.0
+margin_bottom = 18.0
+rect_scale = Vector2( 2.53434, 4.01975 )
+theme = SubResource( 7 )
+text = "Score:   "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Menu/Restart" to="Menu" method="_on_Restart_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="Menu" method="_on_Quit_pressed"]

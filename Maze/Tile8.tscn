@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Tile_Wall.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Tile_Floor.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Torch/torch.glb" type="PackedScene" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.1, 2, 2 )
@@ -40,3 +41,10 @@ material/0 = null
 
 [node name="Ground_Collision" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 4 )
+
+[node name="OmniLight" type="OmniLight" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 3.5, 0 )
+light_color = Color( 0.866667, 0.490196, 0.176471, 1 )
+
+[node name="torch" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.45, 2.7, 0 )

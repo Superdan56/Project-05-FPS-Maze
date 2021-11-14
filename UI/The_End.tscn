@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://UI/Main_Menu.gd" type="Script" id=1]
+[ext_resource path="res://UI/The_End.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Piperita Cox.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=2]
-default_font = SubResource( 3 )
+default_font = SubResource( 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -31,7 +31,7 @@ margin_left = 450.0
 margin_top = 300.0
 margin_right = 550.0
 margin_bottom = 350.0
-text = "Play"
+text = "Play Again?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,7 +41,7 @@ margin_left = 450.0
 margin_top = 400.0
 margin_right = 550.0
 margin_bottom = 450.0
-text = "Quit"
+text = "Quit?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -51,7 +51,8 @@ margin_left = 300.0
 margin_right = 700.0
 margin_bottom = 300.0
 theme = SubResource( 2 )
-text = "Kobold Simulator"
+text = "Victory!
+You Won!"
 align = 1
 valign = 1
 __meta__ = {
