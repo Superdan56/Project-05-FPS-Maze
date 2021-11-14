@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Maze/Maze.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://UI/Menu.gd" type="Script" id=3]
+[ext_resource path="res://UI/Pause_Menu.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -28,20 +28,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Player"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="Body" type="CollisionShape" parent="Player"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0 )
 shape = SubResource( 3 )
 
 [node name="Feet" type="CollisionShape" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
 shape = SubResource( 4 )
 
 [node name="Pivot" type="Position3D" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0 )
 
 [node name="Camera" type="Camera" parent="Player/Pivot"]
 current = true
